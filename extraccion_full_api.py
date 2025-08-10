@@ -1,3 +1,7 @@
+# Extraccion full: importadas las funciones necesarias y manejo de claves a traves de un archivo .env
+# y lectura a traves del load_dotenv
+# Se utiliza el modo overwrite porque estamos hablando de una extracción full y lo consideré lo más pertinente.
+
 from funciones import get_data, build_table, save_data_as_delta
 from dotenv import load_dotenv
 import os
