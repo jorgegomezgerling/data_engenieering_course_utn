@@ -3,8 +3,8 @@
 # (dt). Comento y descomento de acuerdo a lo que quiero observar.
 
 from deltalake import DeltaTable
-# dt = DeltaTable("data_lake/tickers")
-dt = DeltaTable("data_lake/short_volume")
+# dt = DeltaTable("data_lake/bronze/tickers")
+dt = DeltaTable("data_lake/bronze/short_volume")
 df = dt.to_pandas()
 print(df.shape)
 print('*********')

@@ -55,7 +55,7 @@ def get_data_paginacion(base_url, endpoint, data_field=None, params=None, header
     """
     all_data = []
     current_url = f'{base_url}{endpoint}'
-    campos_requeridos = ['ticker', 'date', 'total_volume', 'short_volume', 'nasdaq_carteret_short_volume']
+    campos_requeridos = ['ticker', 'date', 'total_volume', 'short_volume', 'exempt_volume','short_volume_ratio', 'nasdaq_carteret_short_volume']
     contador = 0
 
     while current_url:
