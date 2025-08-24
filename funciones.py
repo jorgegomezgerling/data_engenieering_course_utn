@@ -55,7 +55,7 @@ def get_data_paginacion(base_url, endpoint, data_field=None, params=None, header
     """
     all_data = []
     current_url = f'{base_url}{endpoint}'
-    campos_requeridos = ['ticker', 'date', 'total_volume', 'short_volume', 'exempt_volume','short_volume_ratio', 'nasdaq_carteret_short_volume']
+    campos_requeridos = ["adf_short_volume", "adf_short_volume_exempt", "date", "exempt_volume", "nasdaq_carteret_short_volume", "nasdaq_carteret_short_volume_exempt", "nasdaq_chicago_short_volume", "nasdaq_chicago_short_volume_exempt", "non_exempt_volume", "nyse_short_volume", "nyse_short_volume_exempt", "short_volume", "short_volume_ratio", "ticker", "total_volume"]
     contador = 0
 
     while current_url:
@@ -91,7 +91,7 @@ def get_data_paginacion(base_url, endpoint, data_field=None, params=None, header
             current_url = data.get('next_url')
             contador += 1
 
-            if contador == 8:
+            if contador == 10:
                 break;
             
             time.sleep(5)
