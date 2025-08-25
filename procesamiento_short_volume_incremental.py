@@ -3,7 +3,7 @@
 # Considero que puede ser util para poder hacer la limpieza de datos y quedarme con el del último día
 
 import pandas as pd
-# from funciones import save_data_as_delta
+from funciones import save_new_data_as_delta
 from deltalake import DeltaTable
 
 dt = DeltaTable("data_lake/bronze/short_volume")
@@ -72,6 +72,8 @@ columnas = [
 ]
 
 df = df[columnas]
+
+
 print(df)
 print("************")
 print(df.info(memory_usage='deep'))
@@ -79,10 +81,10 @@ print(df.info(memory_usage='deep'))
 # Nuevos valores posterior a limpieza, transformación y creación de nuevas tablas.
 
 # dtypes: datetime64[ns](1), float64(3), int64(13), object(1)
-# memory usage: 1.9 KB
+# memory usage: 1.9 
 
-
-
+save_new_data_as_delta(df, 'data_lake/silver/short_volume', 'total_volume')
+print('guardado!')
 
 
 
