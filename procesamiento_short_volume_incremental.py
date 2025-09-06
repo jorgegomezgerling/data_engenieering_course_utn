@@ -1,4 +1,5 @@
-# Primeramente, cambié el parámetro en la extraccion incremental a 2. 
+# Primeramente, cambié el parámetro en la extraccion incremental a 2. (params de extraccion_incremental_api.py)
+# 
 # De esta manera, para el mismo ticket traigo las cotizaciones de los dos ultimos dias
 # Considero que puede ser util para poder hacer la limpieza de datos y quedarme con el del último día
 
@@ -71,7 +72,6 @@ columnas = [
 ]
 
 df = df[columnas]
-
 
 print(df)
 print("************")

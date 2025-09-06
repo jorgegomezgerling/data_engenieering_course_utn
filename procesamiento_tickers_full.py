@@ -9,8 +9,7 @@ df = dt.to_pandas()
 print(df.info(memory_usage='deep'))
 print(df)
 
-
-# Sin limpieza: dtypes: bool(1), object(11) memory usage: 59.6 KB
+# Sin limpieza analizamos el estado de la cuestión: dtypes: bool(1), object(11) memory usage: 59.6 KB
 
 # Primeramente, analizamos los nulos:
 
