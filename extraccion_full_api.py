@@ -18,5 +18,5 @@ headers = {
 
 tickers = get_data(base_url,full_endpoint, data_field='results',headers=headers)
 tickers_df = build_table(tickers)
-save_data_as_delta(tickers_df, "data_lake/bronze/tickers", mode='overwrite')
+save_data_as_delta(tickers_df, "data_lake/bronze/polygon_api/tickers", mode='overwrite')
 print(tickers_df)

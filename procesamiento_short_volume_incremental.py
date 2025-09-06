@@ -6,7 +6,7 @@ import pandas as pd
 from funciones import save_new_data_as_delta
 from deltalake import DeltaTable
 
-dt = DeltaTable("data_lake/bronze/short_volume")
+dt = DeltaTable("data_lake/bronze/polygon_api/short_volume")
 df = dt.to_pandas()
 pd.set_option("display.max_columns", None)
 
@@ -36,7 +36,6 @@ print(df["ticker"].duplicated().sum())
 
 df = df.sort_values(by=["ticker", "date"], ascending=[True, False])
 df = df.drop_duplicates(subset=["ticker"], keep="first")
-
 
 # Tercera Transformacion: se agrega columna que puede resultar de utilidad para posteriores análisis:
 
@@ -83,7 +82,7 @@ print(df.info(memory_usage='deep'))
 # dtypes: datetime64[ns](1), float64(3), int64(13), object(1)
 # memory usage: 1.9 
 
-save_new_data_as_delta(df, 'data_lake/silver/short_volume', 'total_volume')
+save_new_data_as_delta(df, 'data_lake/silver/polygon_api/short_volume', 'total_volume')
 print('guardado!')
 
 

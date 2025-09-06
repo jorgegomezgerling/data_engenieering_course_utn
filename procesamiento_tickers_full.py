@@ -2,7 +2,7 @@ import pandas as pd
 from funciones import save_data_as_delta
 from deltalake import DeltaTable
 
-dt = DeltaTable("data_lake/bronze/tickers")
+dt = DeltaTable("data_lake/bronze/polygon_api/tickers")
 df = dt.to_pandas()
 # pd.set_option("display.max_columns", None)
 
@@ -57,4 +57,4 @@ print(df.info(memory_usage='deep'))
 # memory usage: 37.5 KB
 
 print(df)
-save_data_as_delta(df, "data_lake/silver/tickers", mode='overwrite')
+save_data_as_delta(df, "data_lake/silver/polygon_api/tickers", mode='overwrite')
